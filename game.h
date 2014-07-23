@@ -28,8 +28,6 @@ void initGame(void);
 
 void slideInDirection(tDir dir);
 
-void addRandomTile(void);
-
 tScore currentScore(void);
 
 tScore nextTarget(void);

@@ -76,6 +76,9 @@ static tTileValue gNextTarget = 11;
 static uint8_t gNumEmptyTiles;
 
 
+void addRandomTile(void);
+
+
 void initGame(void)
 {
     tPos pos;
@@ -133,8 +136,10 @@ void slideInDirection(tDir dir)
     tPos pos;
     tPos destPos;
     int8_t incr;
+    tTileValue tileValue;
+    bool addNewTile = false;
 
-    if (dir > 0) {
+    if (dir < 0) {
         pos = 0;
         incr = 1;
     } else {
@@ -149,14 +154,34 @@ void slideInDirection(tDir dir)
         if (destPos == pos)
             continue;
     
-        if (gTileValues[destPos] > 0) {
+        addNewTile = true;
+
+        tileValue = gTileValues[destPos];
+        if (tileValue > 0) {
+            tileValue++;
             gTileValues[destPos]++;
             gNumEmptyTiles++;
+            gCurrentScore += gValueScores[tileValue];
+
+            // This is a hack to prevent multiple merges from happening to
+            // the same tile in a single turn.  We set the value to a high
+            // negative (< -1) and then flip the sign bit later.
+            gTileValues[destPos] = -tileValue;
         } else {
             gTileValues[destPos] = gTileValues[pos];
         }
         gTileValues[pos] = 0; // Empty the old position
     }
+
+    for (pos = 0; pos < NUM_TILES; pos++) {
+        tileValue = gTileValues[pos];
+        if (tileValue < BLOCKED_TILE_VALUE) {
+            gTileValues[pos] = -tileValue;
+        }
+    }
+
+    if (addNewTile)
+        addRandomTile();
 }
 
 
