@@ -34,6 +34,7 @@ void printInstructions(void)
   "\n"
   "          PRESS ANY KEY TO START");
 
+    // The amount of time the user waits to read the in
     while (!kbhit())
         seed++;
 
@@ -79,17 +80,19 @@ void printBoard(void)
 
 void gameWon(void)
 {
-    printf("\nCONGRATULATIONS, YOU HAVE WON THE GAME!\n");
+    gotoxy(0, 22);
+    printf("YOU HAVE WON THE GAME!  PRESS ANY KEY...\n");
     cgetc();
-    exit(0);
+    initGame();
 }
 
 
 void gameLost(void)
 {
-    printf("\nSORRY, NO MORE MOVES.\n");
+    gotoxy(0, 22);
+    printf("SORRY, NO MORE MOVES.  PRESS ANY KEY...");
     cgetc();
-    exit(0);
+    initGame();
 }
 
 
@@ -149,11 +152,10 @@ int main(void)
 
         if (isGameWon())
             gameWon();
-
-        if (isGameLost())
+        else if (isGameLost())
             gameLost();
-
-        handleNextEvent();
+        else
+            handleNextEvent();
     }
 
     return 0;
