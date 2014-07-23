@@ -12,7 +12,7 @@ C_OBJS=$(SRCS:.c=.o)
 ASM_OBJS=$(ASM:.s=.o)
 OBJS=$(C_OBJS) $(ASM_OBJS)
 
-PLATFORM=apple2
+PLATFORM=apple2enh
 PLATFORM_CFG=-C apple2-system.cfg
 
 

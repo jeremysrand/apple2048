@@ -1,3 +1,12 @@
+/*
+ * File: apple2048.c
+ * Author: Jeremy Rand
+ * Date: July 23, 2014
+ *
+ * This file contains the entry point for the 2048 game.
+ */
+
+#include <apple2enh.h>
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -105,29 +114,29 @@ void handleNextEvent(void)
         switch (ch) {
             case 'i':
             case 'I':
-            case 11:        // Up arrow
+            case CH_CURS_UP:
                 slideInDirection(DIR_UP);
                 return;
 
             case 'j':
             case 'J':
-            case 8:         // Left arrow
+            case CH_CURS_LEFT:
                 slideInDirection(DIR_LEFT);
                 return;
 
             case 'k':
             case 'K':
-            case 21:        // Right arrow
+            case CH_CURS_RIGHT:
                 slideInDirection(DIR_RIGHT);
                 return;
 
             case 'm':
             case 'M':
-            case 10:        // Up arrow
+            case CH_CURS_DOWN:
                 slideInDirection(DIR_DOWN);
                 return;
 
-            case 27:        // Escape
+            case CH_ESC:
             case 'q':
             case 'Q':
                 exit(0);
