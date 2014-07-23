@@ -148,7 +148,7 @@ void slideInDirection(tDir dir)
     }
 
     for ( ; ((pos >= 0) && (pos < NUM_TILES)); pos += incr) {
-        if (gTileValues[pos] == BLOCKED_TILE_VALUE)
+        if (gTileValues[pos] <= 0)
             continue;
         destPos = nextPosInDir(pos, dir);
         if (destPos == pos)
