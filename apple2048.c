@@ -5,6 +5,43 @@
 #include "game.h"
 
 
+void printInstructions(void)
+{
+    int seed = 0;
+
+    clrscr();
+    printf(
+// 0000000001111111111222222222233333333334
+// 1234567890123456789012345678901234567890
+  "              APPLE 2048\n"
+  "\n"
+  "USE I-J-K-M OR THE ARROW KEYS TO SLIDE\n"
+  "ALL TILES IN A DIRECTION.  MATCHING\n"
+  "TILES ARE ADDED TOGETHER TO MAKE A NEW\n"
+  "TILE.  ON EVERY MOVE, ONE MORE TILE IS\n"
+  "ADDED WITH A RANDOM VALUE OF EITHER 2\n"
+  "OR 4.\n"
+  "\n"
+  "PLAY ENDS WHEN ALL TILES ARE OCCUPIED\n"
+  "AND NO MORE MOVES ARE POSSIBLE.  TRY\n"
+  "TO GET THE LARGEST TILE YOU CAN!\n"
+  "\n"
+  "PRESS ESCAPE OR Q TO QUIT AT ANY TIME.\n"
+  "PRESS R TO START A NEW GAME.\n"
+  "\n"
+  "\n"
+  "\n"
+  "\n"
+  "          PRESS ANY KEY TO START");
+
+    while (!kbhit())
+        seed++;
+
+    cgetc();
+    srand(seed);
+}
+
+
 void printBoard(void)
 {
     tPos x;
@@ -103,6 +140,8 @@ void handleNextEvent(void)
 
 int main(void)
 {
+    printInstructions();
+
     initGame();
 
     while (true) {

@@ -167,6 +167,9 @@ void slideInDirection(tDir dir)
             // the same tile in a single turn.  We set the value to a high
             // negative (< -1) and then flip the sign bit later.
             gTileValues[destPos] = -tileValue;
+
+            if (tileValue == gNextTarget)
+                gNextTarget++;
         } else {
             gTileValues[destPos] = gTileValues[pos];
         }
