@@ -14,6 +14,9 @@
 #include "game.h"
 
 
+#define TILE_WIDTH 10
+#define TILE_HEIGHT 5
+
 void printInstructions(void)
 {
     int seed = 0;
@@ -49,6 +52,8 @@ void printInstructions(void)
 
     cgetc();
     srand(seed);
+
+    clrscr();
 }
 
 
@@ -57,32 +62,21 @@ void printBoard(void)
     tPos x;
     tPos y;
 
-    clrscr();
-
-    for (y = 1; y <= BOARD_SIZE; y++) {
-        printf("+");
-        for (x = 1; x <= BOARD_SIZE; x++) {
-            printf("--------+");
-        }
-        printf("\n!");
-        for (x = 1; x <= BOARD_SIZE; x++) {
-            printf("        !");
-        }
-        printf("\n!");
-        for (x = 1; x <= BOARD_SIZE; x++) {
-            printf("%s!", tileStringForPos(x, y));
-        }
-        printf("\n!");
-        for (x = 1; x <= BOARD_SIZE; x++) {
-            printf("        !");
-        }
-        printf("\n");
-    }
-    printf("+");
     for (x = 1; x <= BOARD_SIZE; x++) {
-        printf("--------+");
+        for (y = 1; y <= BOARD_SIZE; y++) {
+            textframexy((x - 1) * TILE_WIDTH,
+                        (y - 1) * TILE_HEIGHT,
+                        TILE_WIDTH,
+                        TILE_HEIGHT,
+                        TEXTFRAME_WIDE);
+            cputsxy((x - 1) * TILE_WIDTH + 1,
+                    (y - 1) * TILE_HEIGHT + 2,
+                    tileStringForPos(x, y));
+        }
     }
-    printf("\n\nCURRENT SCORE: %ld\nTRY TO GET THE %ld TILE!", currentScore(),
+
+    gotoxy(0,20);
+    printf("CURRENT SCORE: %ld\nTRY TO GET THE %ld TILE!", currentScore(),
             nextTarget());
 }
 
