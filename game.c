@@ -7,6 +7,8 @@
  */
 
 
+#include <assert.h>
+#include <stdlib.h>
 #include "game.h"
 
 
@@ -20,6 +22,7 @@
 #define POS_TO_X(pos) ((pos) % (BOARD_SIZE + 2))
 #define POS_TO_Y(pos) ((pos) / (BOARD_SIZE + 2))
 #define X_Y_TO_POS(x, y) (((y) * (BOARD_SIZE + 2)) + (x))
+#define POS_IN_DIR(pos, dir) ((pos) + (dir))
 
 // The maximum which the game supports in any one tile is 2^19 because that is
 // the largest number which fits in a 6 character tile.  Once this is reached,
@@ -96,11 +99,90 @@ void initGame(void)
             gNumEmptyTiles++;
         }
     }
+
+    addRandomTile();
+    addRandomTile();
+}
+
+
+tPos nextPosInDir(tPos pos, tDir dir)
+{
+    tPos result = pos;
+    tPos nextPos;
+    tTileValue tileValue = gTileValues[pos];
+    tTileValue nextValue;
+
+    while (true) {
+        nextPos = POS_IN_DIR(result, dir);
+        nextValue = gTileValues[nextPos];
+
+        if ((nextValue != 0) &&
+            (nextValue != tileValue))
+            break;
+
+        result = nextPos;
+        if (nextValue != 0)
+            break;
+    }
+    return result;
 }
 
 
 void slideInDirection(tDir dir)
 {
+    tPos pos;
+    tPos destPos;
+    int8_t incr;
+
+    if (dir > 0) {
+        pos = 0;
+        incr = 1;
+    } else {
+        pos = NUM_TILES - 1;
+        incr = -1;
+    }
+
+    for ( ; ((pos >= 0) && (pos < NUM_TILES)); pos += incr) {
+        if (gTileValues[pos] == BLOCKED_TILE_VALUE)
+            continue;
+        destPos = nextPosInDir(pos, dir);
+        if (destPos == pos)
+            continue;
+    
+        if (gTileValues[destPos] > 0) {
+            gTileValues[destPos]++;
+            gNumEmptyTiles++;
+        } else {
+            gTileValues[destPos] = gTileValues[pos];
+        }
+        gTileValues[pos] = 0; // Empty the old position
+    }
+}
+
+
+void addRandomTile(void)
+{
+    int8_t randTile;
+    tPos pos;
+
+    if (gNumEmptyTiles == 0)
+        return;
+
+    randTile = (rand() % gNumEmptyTiles);
+
+    for (pos = 0; pos < NUM_TILES; pos++) {
+        if (gTileValues[pos] == 0) {
+            if (randTile == 0) {
+                if (rand() < (RAND_MAX / 10))
+                    gTileValues[pos] = 2;   // This creates a 4
+                else
+                    gTileValues[pos] = 1;   // This creates a 2
+                gNumEmptyTiles--;
+                return;
+            }
+            randTile--;
+        }
+    }
 }
 
 
@@ -124,7 +206,37 @@ bool isGameWon(void)
 
 bool isGameLost(void)
 {
-    return (gNumEmptyTiles == 0);
+    tPos x;
+    tPos y;
+    tPos pos;
+    tTileValue tileValue;
+
+    if (gNumEmptyTiles > 0)
+        return false;
+
+    for (x = 1; x <= BOARD_SIZE; x++) {
+        for (y = 1; y <= BOARD_SIZE; y++) {
+            pos = X_Y_TO_POS(x, y);
+            tileValue = gTileValues[pos];
+
+            assert(tileValue > 0);
+
+            // If a tile value matches another adjacent tile value, then there
+            // are still moves.
+            if (tileValue == gTileValues[POS_IN_DIR(pos, DIR_DOWN)])
+                return false;
+            if (tileValue == gTileValues[POS_IN_DIR(pos, DIR_RIGHT)])
+                return false;
+
+            // Because we iterate over all tiles, we only need to check two of
+            // the four directions.  That will compare all possible pairs.  It
+            // will also check the edge against the blocking tiles but whatever.
+        }
+    }
+
+    // If we get to here, there were no matching tiles so there are no available
+    // moves.
+    return true;
 }
 
 

@@ -20,13 +20,15 @@
 
 
 typedef int8_t tDir;
-typedef uint8_t tPos;
+typedef int8_t tPos;
 typedef uint32_t tScore;
 
 
 void initGame(void);
 
 void slideInDirection(tDir dir);
+
+void addRandomTile(void);
 
 tScore currentScore(void);
 
