@@ -172,6 +172,7 @@ void performAnimationsLeft(void)
     tTileAnim *tileAnim;
     tPos x;
     tPos y;
+    bool firstFrame = true;
 
     do {
         animInProgress = false;
@@ -182,15 +183,24 @@ void performAnimationsLeft(void)
                 continue;
 
             x = tileAnim->fromX;
-            y = tileAnim->fromY;
-            if ((x % TILE_WIDTH) != (TILE_WIDTH - 1)) {
-                x += TILE_WIDTH;
-                if (x < 40) {
-                    cputcxy(x, y + 1, ' ');
-                    cputcxy(x, y + 2, ' ');
-                    cputcxy(x, y + 3, ' ');
+            y = tileAnim->fromY; 
+
+            if (!firstFrame) {
+                switch (x % TILE_WIDTH) {
+                    case 0:
+                        break;
+                    case 1:
+                        textframexy(((x / TILE_WIDTH) + 1) * TILE_WIDTH, y,
+                                TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                        break;
+                    default:
+                        x += TILE_WIDTH - 1;
+                        cputcxy(x, y + 1, ' ');
+                        cputcxy(x, y + 2, ' ');
+                        cputcxy(x, y + 3, ' ');
+                        x -= TILE_WIDTH - 1;
+                        break;
                 }
-                x -= TILE_WIDTH;
             }
 
             x--;
@@ -207,6 +217,7 @@ void performAnimationsLeft(void)
             }
             playSound(200, 2);
         }
+        firstFrame = false;
     } while (animInProgress);
 }
 
@@ -218,6 +229,7 @@ void performAnimationsRight(void)
     tTileAnim *tileAnim;
     tPos x;
     tPos y;
+    bool firstFrame = true;
 
     do {
         animInProgress = false;
@@ -229,10 +241,21 @@ void performAnimationsRight(void)
 
             x = tileAnim->fromX;
             y = tileAnim->fromY;
-            if ((x % TILE_WIDTH) != 0) {
-                cputcxy(x, y + 1, ' ');
-                cputcxy(x, y + 2, ' ');
-                cputcxy(x, y + 3, ' ');
+
+            if (!firstFrame) {
+                switch (x % TILE_WIDTH) {
+                    case 0:
+                        break;
+                    case (TILE_WIDTH - 1):
+                        textframexy((x / TILE_WIDTH) * TILE_WIDTH, y,
+                                TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                        break;
+                    default:
+                        cputcxy(x, y + 1, ' ');
+                        cputcxy(x, y + 2, ' ');
+                        cputcxy(x, y + 3, ' ');
+                        break;
+                }
             }
 
             x++;
@@ -249,6 +272,7 @@ void performAnimationsRight(void)
             }
             playSound(200, 2);
         }
+        firstFrame = false;
     } while (animInProgress);
 }
 
@@ -260,6 +284,7 @@ void performAnimationsUp(void)
     tTileAnim *tileAnim;
     tPos x;
     tPos y;
+    bool firstFrame = true;
 
     do {
         animInProgress = false;
@@ -272,14 +297,16 @@ void performAnimationsUp(void)
             x = tileAnim->fromX;
             y = tileAnim->fromY;
 
-            switch ((y % TILE_HEIGHT)) {
-                case 0:
-                default:
-                    cputsxy(x, y + TILE_HEIGHT, "          ");
-                    if (y < TILE_Y_TO_SCREEN_Y(BOARD_SIZE))
+            if (!firstFrame) {
+                switch ((y % TILE_HEIGHT)) {
+                    case 0:
+                        break;
+                    default:
+                        cputsxy(x + 1, y + TILE_HEIGHT - 1, "        ");
                         textframexy(x, ((y / TILE_HEIGHT) + 1) * TILE_HEIGHT,
                                 TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
-                    break;
+                        break;
+                }
             }
 
             y--;
@@ -296,6 +323,7 @@ void performAnimationsUp(void)
             }
             playSound(200, 2);
         }
+        firstFrame = false;
     } while (animInProgress);
 }
 
@@ -307,6 +335,7 @@ void performAnimationsDown(void)
     tTileAnim *tileAnim;
     tPos x;
     tPos y;
+    bool firstFrame = true;
 
     do {
         animInProgress = false;
@@ -319,13 +348,16 @@ void performAnimationsDown(void)
             x = tileAnim->fromX;
             y = tileAnim->fromY;
 
-            switch ((y % TILE_HEIGHT)) {
-                case 0:
-                default:
-                    cputsxy(x, y, "          ");
-                    textframexy(x, (y / TILE_HEIGHT) * TILE_HEIGHT,
-                                TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
-                    break;
+            if (!firstFrame) {
+                switch ((y % TILE_HEIGHT)) {
+                    case 0:
+                        break;
+                    default:
+                        cputsxy(x + 1, y, "        ");
+                        textframexy(x, (y / TILE_HEIGHT) * TILE_HEIGHT,
+                                    TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                        break;
+                }
             }
 
             y++;
@@ -342,6 +374,7 @@ void performAnimationsDown(void)
             }
             playSound(200, 2);
         }
+        firstFrame = false;
     } while (animInProgress);
 }
 
