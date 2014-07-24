@@ -8,20 +8,12 @@
 
 
 #include <assert.h>
+#include <stddef.h>
 #include <stdlib.h>
+
 #include "game.h"
 
 
-// A 4x4 board is actually represented as a 6x6 board internally.  This gives
-// us special tiles around the whole board which can have a value which
-// prevents tiles from scrolling beyond the bounds of the board.  Also, this
-// is why the values of DIR_DOWN and DIR_UP in the game.h file is a bit
-// strange.
-#define NUM_TILES ((BOARD_SIZE + 2) * (BOARD_SIZE + 2))
-
-#define POS_TO_X(pos) ((pos) % (BOARD_SIZE + 2))
-#define POS_TO_Y(pos) ((pos) / (BOARD_SIZE + 2))
-#define X_Y_TO_POS(x, y) (((y) * (BOARD_SIZE + 2)) + (x))
 #define POS_IN_DIR(pos, dir) ((pos) + (dir))
 
 // The maximum which the game supports in any one tile is 2^19 because that is
@@ -79,7 +71,19 @@ static uint8_t gNumEmptyTiles;
 void addRandomTile(void);
 
 
-void initGame(void)
+static tTileMoveCallback gTileMoveCallback = NULL;
+static tNewTileCallback gNewTileCallback = NULL;
+
+
+void initGameEngine(tTileMoveCallback tileMoveCallback,
+        tNewTileCallback newTileCallback)
+{
+    gTileMoveCallback = tileMoveCallback;
+    gNewTileCallback = newTileCallback;
+}
+
+
+void newGame(void)
 {
     tPos pos;
     tPos x;
@@ -173,6 +177,7 @@ void slideInDirection(tDir dir)
         } else {
             gTileValues[destPos] = gTileValues[pos];
         }
+        gTileMoveCallback(pos, destPos, gValueStrings[gTileValues[pos]]);
         gTileValues[pos] = 0; // Empty the old position
     }
 
@@ -206,6 +211,7 @@ void addRandomTile(void)
                 else
                     gTileValues[pos] = 1;   // This creates a 2
                 gNumEmptyTiles--;
+                gNewTileCallback(pos, gValueStrings[gTileValues[pos]]);
                 return;
             }
             randTile--;
@@ -270,5 +276,10 @@ bool isGameLost(void)
 
 char *tileStringForPos(tPos x, tPos y)
 {
-    return gValueStrings[gTileValues[X_Y_TO_POS(x, y)]];
+    tTileValue value = gTileValues[X_Y_TO_POS(x, y)];
+
+    if (value < 0)
+        value *= -1;
+
+    return gValueStrings[value];
 }
