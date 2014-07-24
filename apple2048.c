@@ -161,9 +161,16 @@ void printValues(void)
 
 void printScore(void)
 {
+    tScore highestTile = highestTarget();
+
     gotoxy(0,20);
-    printf("SCORE: %10ld  HI-SCORE: %10ld\nTRY TO GET THE %ld TILE!",
-            currentScore(), highScore(), nextTarget());
+    printf("SCORE: %10ld  HI-SCORE: %10ld\n", currentScore(), highScore());
+    
+    if (highestTile == 0) {
+        printf("TRY TO GET THE %ld TILE!\n", nextTarget());
+    } else {
+        printf("GOT %ld!  NOW GET %ld!\n", highestTarget, nextTarget());
+    }
 }
 
 
