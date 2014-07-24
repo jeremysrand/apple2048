@@ -442,8 +442,9 @@ void printBoard(void)
 void gameWon(void)
 {
     gotoxy(0, 22);
-    printf("YOU HAVE WON THE GAME!  PRESS ANY KEY...\n");
-    cgetc();
+    printf("YOU HAVE WON THE GAME!  PRESS SPACE...\n");
+    while (cgetc() != ' ')
+        ;
     clrscr();
     newGame();
 }
@@ -452,8 +453,9 @@ void gameWon(void)
 void gameLost(void)
 {
     gotoxy(0, 22);
-    printf("SORRY, NO MORE MOVES.  PRESS ANY KEY...");
-    cgetc();
+    printf("SORRY, NO MORE MOVES.  PRESS SPACE...");
+    while (cgetc() != ' ')
+        ;
     clrscr();
     newGame();
 }
