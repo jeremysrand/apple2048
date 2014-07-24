@@ -94,11 +94,13 @@ void printInstructions(void)
   "AND NO MORE MOVES ARE POSSIBLE.  TRY\n"
   "TO GET THE LARGEST TILE YOU CAN!\n"
   "\n"
+  "IF ON A ROM 1 GS, SET ALTERNATE DISPLAY\n"
+  "MODE FROM THE CDA MENU.\n"
+  "\n"
   "PRESS ESCAPE OR Q TO QUIT AT ANY TIME.\n"
   "PRESS R TO START A NEW GAME.\n"
   "PRESS S TO TOGGLE SOUND.\n"
   "PRESS H TO SEE THIS INFO AGAIN.\n"
-  "\n"
   "\n"
   "\n"
   "\n"
@@ -183,6 +185,21 @@ void resetAnimations(void)
 }
 
 
+void switchToPage2(void)
+{
+    char *ptr = (char *)0xc055;
+    memcpy((char *)0x800, (char *)0x400, 0x400);
+    *ptr = 0;
+}
+
+
+void switchToPage1(void)
+{
+    char *ptr = (char *)0xc054;
+    *ptr = 0;
+}
+
+
 void performAnimationsLeft(void)
 {
     bool animInProgress;
@@ -195,6 +212,7 @@ void performAnimationsLeft(void)
     do {
         animInProgress = false;
 
+        switchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -235,6 +253,7 @@ void performAnimationsLeft(void)
             }
             playSound(200, 1);
         }
+        switchToPage1();
         firstFrame = false;
     } while (animInProgress);
 }
@@ -252,6 +271,7 @@ void performAnimationsRight(void)
     do {
         animInProgress = false;
 
+        switchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -290,6 +310,7 @@ void performAnimationsRight(void)
             }
             playSound(200, 1);
         }
+        switchToPage1();
         firstFrame = false;
     } while (animInProgress);
 }
@@ -307,6 +328,7 @@ void performAnimationsUp(void)
     do {
         animInProgress = false;
 
+        switchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -341,6 +363,7 @@ void performAnimationsUp(void)
             }
             playSound(200, 1);
         }
+        switchToPage1();
         firstFrame = false;
     } while (animInProgress);
 }
@@ -358,6 +381,7 @@ void performAnimationsDown(void)
     do {
         animInProgress = false;
 
+        switchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -392,6 +416,7 @@ void performAnimationsDown(void)
             }
             playSound(200, 1);
         }
+        switchToPage1();
         firstFrame = false;
     } while (animInProgress);
 }
