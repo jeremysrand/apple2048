@@ -65,6 +65,14 @@ void playSound(int8_t freq, int16_t duration)
 }
 
 
+void quitGame(void)
+{
+    shutdownGameEngine();
+    clrscr();
+    exit(0);
+}
+
+
 void printInstructions(void)
 {
     int seed = 0;
@@ -89,6 +97,7 @@ void printInstructions(void)
   "PRESS ESCAPE OR Q TO QUIT AT ANY TIME.\n"
   "PRESS R TO START A NEW GAME.\n"
   "PRESS S TO TOGGLE SOUND.\n"
+  "PRESS H TO SEE THIS INFO AGAIN.\n"
   "\n"
   "\n"
   "\n"
@@ -153,8 +162,8 @@ void printValues(void)
 void printScore(void)
 {
     gotoxy(0,20);
-    printf("CURRENT SCORE: %ld\nTRY TO GET THE %ld TILE!", currentScore(),
-            nextTarget());
+    printf("SCORE: %10ld  HI-SCORE: %10ld\nTRY TO GET THE %ld TILE!",
+            currentScore(), highScore(), nextTarget());
 }
 
 
@@ -495,7 +504,8 @@ void handleNextEvent(void)
             case CH_ESC:
             case 'q':
             case 'Q':
-                exit(0);
+                quitGame();
+                break;
 
             case 'r':
             case 'R':
@@ -507,6 +517,11 @@ void handleNextEvent(void)
             case 'S':
                 gPlaySounds = !gPlaySounds;
                 break;
+
+            case 'h':
+            case 'H':
+                printInstructions();
+                return;
         }
     }
 }

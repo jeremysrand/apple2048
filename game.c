@@ -9,6 +9,7 @@
 
 #include <assert.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "game.h"
@@ -16,10 +17,10 @@
 
 #define POS_IN_DIR(pos, dir) ((pos) + (dir))
 
-// The maximum which the game supports in any one tile is 2^19 because that is
-// the largest number which fits in a 6 character tile.  Once this is reached,
+// The maximum which the game supports in any one tile is 2^26 because that is
+// the largest number which fits in a 8 character tile.  Once this is reached,
 // the game is won.  Note this is a very big number so not a huge restriction.
-#define MAX_TILE_VALUE 19
+#define MAX_TILE_VALUE 26
 
 #define BLOCKED_TILE_VALUE -1
 
@@ -56,16 +57,30 @@ static char *gValueStrings[MAX_TILE_VALUE + 1] = {
     "  65536 ",
     " 131072 ",
     " 262144 ",
-    " 524288 "
+    " 524288 ",
+    "1048576 ",
+    "2097152 ",
+    "4194304 ",
+    "8388608 ",
+    "16777216",
+    "33554432",
+    "67108864"
 };
 
 static tScore gValueScores[MAX_TILE_VALUE + 1] = {
     0l, 2l, 4l, 8l, 16l, 32l, 64l, 128l, 256l, 512l, 1024l, 2048l, 4096l,
-    8192l, 16384l, 32768l, 65536l, 131072l, 262144l, 524288l };
+    8192l, 16384l, 32768l, 65536l, 131072l, 262144l, 524288l, 1048576l,
+    2097152l, 4194304l, 8388608l, 16777216l, 33554432l, 67108864l };
 
-static tScore gCurrentScore;
-static tTileValue gNextTarget = 11;
+
+struct tScoreRecord {
+    tScore currentScore;
+    tScore highScore;
+    tTileValue highestTile;
+} gScoreRecord;
+
 static uint8_t gNumEmptyTiles;
+static bool gIsGameWon;
 
 
 void addRandomTile(void);
@@ -78,8 +93,30 @@ static tNewTileCallback gNewTileCallback = NULL;
 void initGameEngine(tTileMoveCallback tileMoveCallback,
         tNewTileCallback newTileCallback)
 {
+    FILE *scoreFile;
+
     gTileMoveCallback = tileMoveCallback;
     gNewTileCallback = newTileCallback;
+
+    gScoreRecord.highScore = 0;
+    gScoreRecord.highestTile = 0;
+
+    scoreFile = fopen("a2048score", "rb");
+    if (scoreFile != NULL) {
+        fread(&gScoreRecord, sizeof(gScoreRecord), 1, scoreFile);
+        fclose(scoreFile);
+    }
+}
+
+
+void shutdownGameEngine(void)
+{
+    FILE *scoreFile;
+    scoreFile = fopen("a2048score", "wb");
+    if (scoreFile != NULL) {
+        fwrite(&gScoreRecord, sizeof(gScoreRecord), 1, scoreFile);
+        fclose(scoreFile);
+    }
 }
 
 
@@ -89,8 +126,9 @@ void newGame(void)
     tPos x;
     tPos y;
 
-    gCurrentScore = 0;
+    gScoreRecord.currentScore = 0;
     gNumEmptyTiles = 0;
+    gIsGameWon = false;
 
     for (pos = 0; pos < NUM_TILES; pos++) {
         x = POS_TO_X(pos);
@@ -135,6 +173,24 @@ tPos nextPosInDir(tPos pos, tDir dir)
 }
 
 
+void increaseScore(tScore value)
+{
+    gScoreRecord.currentScore += value;
+    if (gScoreRecord.currentScore > gScoreRecord.highScore)
+        gScoreRecord.highScore = gScoreRecord.currentScore;
+}
+
+
+void updateMaxTile(tTileValue tileValue)
+{
+    if (gScoreRecord.highestTile < tileValue)
+        gScoreRecord.highestTile = tileValue;
+
+    if (tileValue >= MAX_TILE_VALUE)
+        gIsGameWon = true;
+}
+
+
 void slideInDirection(tDir dir)
 {
     tPos pos;
@@ -165,15 +221,13 @@ void slideInDirection(tDir dir)
             tileValue++;
             gTileValues[destPos]++;
             gNumEmptyTiles++;
-            gCurrentScore += gValueScores[tileValue];
+            increaseScore(gValueScores[tileValue]);
+            updateMaxTile(tileValue);
 
             // This is a hack to prevent multiple merges from happening to
             // the same tile in a single turn.  We set the value to a high
             // negative (< -1) and then flip the sign bit later.
             gTileValues[destPos] = -tileValue;
-
-            if (tileValue == gNextTarget)
-                gNextTarget++;
         } else {
             gTileValues[destPos] = gTileValues[pos];
         }
@@ -222,19 +276,39 @@ void addRandomTile(void)
 
 tScore currentScore(void)
 {
-    return gCurrentScore;
+    return gScoreRecord.currentScore;
+}
+
+
+tScore highScore(void)
+{
+    return gScoreRecord.highScore;
+}
+
+
+tScore highestTarget(void)
+{
+    if (gScoreRecord.highestTile < 11)
+        return 0;
+
+    return gValueScores[gScoreRecord.highestTile];
 }
 
 
 tScore nextTarget(void)
 {
-    return gValueScores[gNextTarget];
+    tTileValue value = gScoreRecord.highestTile;
+
+    if (value < 11)
+        value = 11;
+
+    return gValueScores[value];
 }
 
 
 bool isGameWon(void)
 {
-    return (gNextTarget > MAX_TILE_VALUE);
+    return gIsGameWon;
 }
 
 

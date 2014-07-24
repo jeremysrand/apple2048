@@ -40,12 +40,16 @@ typedef void (*tNewTileCallback)(tPos at, char *tileString);
 extern void initGameEngine(tTileMoveCallback tileMoveCallback,
         tNewTileCallback newTileCallback);
 
+extern void shutdownGameEngine(void);
+
 extern void newGame(void);
 
 extern void slideInDirection(tDir dir);
 
 extern tScore currentScore(void);
+extern tScore highScore(void);
 
+extern tScore highestTarget(void);
 extern tScore nextTarget(void);
 
 extern bool isGameWon(void);
