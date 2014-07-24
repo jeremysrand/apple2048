@@ -52,9 +52,11 @@ void shortDelay(uint16_t howMuch)
 
 void playSound(int8_t freq, int16_t duration)
 {
+    if (!gPlaySounds)
+        return;
+
     while (duration > 0) {
-        if (gPlaySounds)
-            asm ("STA %w", 0xc030);
+        asm ("STA %w", 0xc030);
         while (freq > 0) {
             freq--;
         }
@@ -215,7 +217,7 @@ void performAnimationsLeft(void)
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
             }
-            playSound(200, 2);
+            playSound(200, 1);
         }
         firstFrame = false;
     } while (animInProgress);
@@ -270,7 +272,7 @@ void performAnimationsRight(void)
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
             }
-            playSound(200, 2);
+            playSound(200, 1);
         }
         firstFrame = false;
     } while (animInProgress);
@@ -321,7 +323,7 @@ void performAnimationsUp(void)
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
             }
-            playSound(200, 2);
+            playSound(200, 1);
         }
         firstFrame = false;
     } while (animInProgress);
@@ -372,7 +374,7 @@ void performAnimationsDown(void)
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
             }
-            playSound(200, 2);
+            playSound(200, 1);
         }
         firstFrame = false;
     } while (animInProgress);
