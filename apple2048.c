@@ -193,6 +193,10 @@ void performAnimationsLeft(void)
     tPos x;
     tPos y;
     bool firstFrame = true;
+    uint8_t speed = 1;
+
+    if (gNumAnims > BOARD_SIZE)
+        speed = 2;
 
     do {
         animInProgress = false;
@@ -207,31 +211,57 @@ void performAnimationsLeft(void)
             y = tileAnim->fromY; 
 
             if (!firstFrame) {
-                switch (x % TILE_WIDTH) {
-                    case 0:
-                        break;
-                    case 1:
-                        textframexy(((x / TILE_WIDTH) + 1) * TILE_WIDTH, y,
-                                TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
-                        break;
-                    default:
-                        x += TILE_WIDTH - 1;
-                        cputcxy(x, y + 1, ' ');
-                        cputcxy(x, y + 2, ' ');
-                        cputcxy(x, y + 3, ' ');
-                        x -= TILE_WIDTH - 1;
-                        break;
+                if (speed == 1) {
+                    switch (x % TILE_WIDTH) {
+                        case 0:
+                            break;
+                        case 1:
+                            textframexy(((x / TILE_WIDTH) + 1) * TILE_WIDTH, y,
+                                    TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                            break;
+                        default:
+                            x += TILE_WIDTH - 1;
+                            cputcxy(x, y + 1, ' ');
+                            cputcxy(x, y + 2, ' ');
+                            cputcxy(x, y + 3, ' ');
+                            x -= TILE_WIDTH - 1;
+                            break;
+                    } 
+                } else {
+                    switch (x % TILE_WIDTH) {
+                        case 0:
+                            break;
+                        case 1:
+                        case 2:
+                            x += TILE_WIDTH - 1;
+                            cputcxy(x, y + 1, ' ');
+                            cputcxy(x, y + 2, ' ');
+                            cputcxy(x, y + 3, ' ');
+                            x -= TILE_WIDTH - 1;
+                            textframexy(((x / TILE_WIDTH) + 1) * TILE_WIDTH, y,
+                                    TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                            break;
+                        default:
+                            x += TILE_WIDTH - 2;
+                            cputsxy(x, y + 1, "  ");
+                            cputsxy(x, y + 2, "  ");
+                            cputsxy(x, y + 3, "  ");
+                            x -= TILE_WIDTH - 2;
+                            break;
+                    } 
                 }
             }
 
-            x--;
+            x -= speed;
 
-            textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
             
-            if (x == tileAnim->toX) {
+            if (x <= tileAnim->toX) {
+                x = tileAnim->toX;
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->tileString = NULL;
                 printValueAt(x, y, tileAnim->endTileString);
             } else {
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->fromX = x;
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
@@ -252,6 +282,10 @@ void performAnimationsRight(void)
     tPos x;
     tPos y;
     bool firstFrame = true;
+    uint8_t speed = 1;
+
+    if (gNumAnims > BOARD_SIZE)
+        speed = 2;
 
     do {
         animInProgress = false;
@@ -266,29 +300,51 @@ void performAnimationsRight(void)
             y = tileAnim->fromY;
 
             if (!firstFrame) {
-                switch (x % TILE_WIDTH) {
-                    case 0:
-                        break;
-                    case (TILE_WIDTH - 1):
-                        textframexy((x / TILE_WIDTH) * TILE_WIDTH, y,
-                                TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
-                        break;
-                    default:
-                        cputcxy(x, y + 1, ' ');
-                        cputcxy(x, y + 2, ' ');
-                        cputcxy(x, y + 3, ' ');
-                        break;
+                if (speed == 1) {
+                    switch (x % TILE_WIDTH) {
+                        case 0:
+                            break;
+                        case (TILE_WIDTH - 1):
+                            textframexy((x / TILE_WIDTH) * TILE_WIDTH, y,
+                                    TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                            break;
+                        default:
+                            cputcxy(x, y + 1, ' ');
+                            cputcxy(x, y + 2, ' ');
+                            cputcxy(x, y + 3, ' ');
+                            break;
+                    }
+                } else {
+                    switch (x % TILE_WIDTH) {
+                        case 0:
+                            break;
+                        case (TILE_WIDTH - 1):
+                        case (TILE_WIDTH - 2):
+                            textframexy((x / TILE_WIDTH) * TILE_WIDTH, y,
+                                    TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+                            cputcxy(x, y + 1, ' ');
+                            cputcxy(x, y + 2, ' ');
+                            cputcxy(x, y + 3, ' ');
+                            break;
+                        default:
+                            cputsxy(x, y + 1, "  ");
+                            cputsxy(x, y + 2, "  ");
+                            cputsxy(x, y + 3, "  ");
+                            break;
+                    }
                 }
             }
 
-            x++;
+            x += speed;
 
-            textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
             
-            if (x == tileAnim->toX) {
+            if (x >= tileAnim->toX) {
+                x = tileAnim->toX;
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->tileString = NULL;
                 printValueAt(x, y, tileAnim->endTileString);
             } else {
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->fromX = x;
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
@@ -309,6 +365,10 @@ void performAnimationsUp(void)
     tPos x;
     tPos y;
     bool firstFrame = true;
+    uint8_t speed = 1;
+
+    if (gNumAnims > BOARD_SIZE)
+        speed = 2;
 
     do {
         animInProgress = false;
@@ -328,20 +388,26 @@ void performAnimationsUp(void)
                         break;
                     default:
                         cputsxy(x + 1, y + TILE_HEIGHT - 1, "        ");
+                        if (speed > 1)
+                            cputsxy(x + 1, y + TILE_HEIGHT - 1, "        ");
                         textframexy(x, ((y / TILE_HEIGHT) + 1) * TILE_HEIGHT,
                                 TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                         break;
                 }
             }
 
-            y--;
-
-            textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
+            if (y < speed)
+                y = 0;
+            else
+                y -= speed;;
             
-            if (y == tileAnim->toY) {
+            if (y <= tileAnim->toY) {
+                y = tileAnim->toY;
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->tileString = NULL;
                 printValueAt(x, y, tileAnim->endTileString);
             } else {
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->fromY = y;
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
@@ -362,6 +428,10 @@ void performAnimationsDown(void)
     tPos x;
     tPos y;
     bool firstFrame = true;
+    uint8_t speed = 1;
+
+    if (gNumAnims > BOARD_SIZE)
+        speed = 2;
 
     do {
         animInProgress = false;
@@ -381,20 +451,24 @@ void performAnimationsDown(void)
                         break;
                     default:
                         cputsxy(x + 1, y, "        ");
+                        if (speed > 1)
+                            cputsxy(x + 1, y + 1, "        ");
                         textframexy(x, (y / TILE_HEIGHT) * TILE_HEIGHT,
                                     TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                         break;
                 }
             }
 
-            y++;
+            y += speed;
 
-            textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
             
-            if (y == tileAnim->toY) {
+            if (y >= tileAnim->toY) {
+                y = tileAnim->toY;
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->tileString = NULL;
                 printValueAt(x, y, tileAnim->endTileString);
             } else {
+                textframexy(x, y, TILE_WIDTH, TILE_HEIGHT, TEXTFRAME_WIDE);
                 tileAnim->fromY = y;
                 animInProgress = true;
                 printValueAt(x, y, tileAnim->tileString);
