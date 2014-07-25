@@ -83,7 +83,7 @@ static uint8_t gNumEmptyTiles;
 static bool gIsGameWon;
 
 
-void addRandomTile(void);
+static void addRandomTile(void);
 
 
 static tTileMoveCallback gTileMoveCallback = NULL;
@@ -150,7 +150,7 @@ void newGame(void)
 }
 
 
-tPos nextPosInDir(tPos pos, tDir dir)
+static tPos nextPosInDir(tPos pos, tDir dir)
 {
     tPos result = pos;
     tPos nextPos;
@@ -173,7 +173,7 @@ tPos nextPosInDir(tPos pos, tDir dir)
 }
 
 
-void increaseScore(tScore value)
+static void increaseScore(tScore value)
 {
     gScoreRecord.currentScore += value;
     if (gScoreRecord.currentScore > gScoreRecord.highScore)
@@ -181,7 +181,7 @@ void increaseScore(tScore value)
 }
 
 
-void updateMaxTile(tTileValue tileValue)
+static void updateMaxTile(tTileValue tileValue)
 {
     if (gScoreRecord.highestTile < tileValue)
         gScoreRecord.highestTile = tileValue;
@@ -247,7 +247,7 @@ void slideInDirection(tDir dir)
 }
 
 
-void addRandomTile(void)
+static void addRandomTile(void)
 {
     int8_t randTile;
     tPos pos;
