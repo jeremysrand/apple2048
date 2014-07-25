@@ -9,3 +9,4 @@
 
 void switchToPage2(void);
 void switchToPage1(void);
+void gsSwitchToPage2(void);

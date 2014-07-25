@@ -19,7 +19,7 @@ PLATFORM_CFG=-C apple2-system.cfg
 all:    $(SYS)
 
 %.o:	%.s
-	ca65 -t $(PLATFORM) -o $@ $<
+	ca65 --cpu 65816 -o $@ $<
 
 $(SYS): $(ASM_OBJS) $(SRCS)
 	cl65 -t $(PLATFORM) $(PLATFORM_CFG) --mapfile $(MAPFILE) -o $(SYS) $(SRCS) $(addprefix --obj ,$(ASM_OBJS)) 

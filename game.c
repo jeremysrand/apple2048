@@ -297,7 +297,7 @@ tScore highestTarget(void)
 
 tScore nextTarget(void)
 {
-    tTileValue value = gScoreRecord.highestTile;
+    tTileValue value = gScoreRecord.highestTile + 1;
 
     if (value < 11)
         value = 11;

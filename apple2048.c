@@ -43,6 +43,8 @@ static tPos gNewTilePos;
 
 static bool gPlaySounds = true;
 
+static void (*gSwitchToPage2)(void) = switchToPage2;
+
 void shortDelay(uint16_t howMuch)
 {
     while (howMuch > 0) {
@@ -94,9 +96,6 @@ void printInstructions(void)
   "PLAY ENDS WHEN ALL TILES ARE OCCUPIED\n"
   "AND NO MORE MOVES ARE POSSIBLE.  TRY\n"
   "TO GET THE LARGEST TILE YOU CAN!\n"
-  "\n"
-  "IF ON A ROM 1 GS, SET ALTERNATE DISPLAY\n"
-  "MODE FROM THE CDA MENU.\n"
   "\n"
   "PRESS ESCAPE OR Q TO QUIT AT ANY TIME.\n"
   "PRESS R TO START A NEW GAME.\n"
@@ -172,7 +171,7 @@ void printScore(void)
     if (highestTile == 0) {
         printf("TRY TO GET THE %ld TILE!\n", nextTarget());
     } else {
-        printf("GOT %ld!  NOW GET %ld!\n", highestTarget, nextTarget());
+        printf("GOT %ld!  NOW GET %ld!\n", highestTile, nextTarget());
     }
 }
 
@@ -198,7 +197,7 @@ void performAnimationsLeft(void)
     do {
         animInProgress = false;
 
-        switchToPage2();
+        gSwitchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -257,7 +256,7 @@ void performAnimationsRight(void)
     do {
         animInProgress = false;
 
-        switchToPage2();
+        gSwitchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -314,7 +313,7 @@ void performAnimationsUp(void)
     do {
         animInProgress = false;
 
-        switchToPage2();
+        gSwitchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -367,7 +366,7 @@ void performAnimationsDown(void)
     do {
         animInProgress = false;
 
-        switchToPage2();
+        gSwitchToPage2();
         for (pos = 0; pos < gNumAnims; pos++) {
             tileAnim = &(gTileAnims[pos]);
             if (tileAnim->tileString == NULL)
@@ -577,6 +576,14 @@ void newTile(tPos at, char *tileString)
 
 int main(void)
 {
+    switch (get_ostype()) {
+        case APPLE_IIGS:
+        case APPLE_IIGS1:
+        case APPLE_IIGS3:
+            gSwitchToPage2 = gsSwitchToPage2;
+            break;
+    }
+
     printInstructions();
 
     initGameEngine(tileMoved, newTile);
