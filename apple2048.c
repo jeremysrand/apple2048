@@ -14,6 +14,7 @@
 #include <string.h>
 
 #include "game.h"
+#include "textpage.h"
 
 
 #define TILE_WIDTH 10
@@ -182,21 +183,6 @@ void resetAnimations(void)
     gNewTileString = NULL;
     gAnimDir = 0;
     gNumAnims = 0;
-}
-
-
-void switchToPage2(void)
-{
-    char *ptr = (char *)0xc055;
-    memcpy((char *)0x800, (char *)0x400, 0x400);
-    *ptr = 0;
-}
-
-
-void switchToPage1(void)
-{
-    char *ptr = (char *)0xc054;
-    *ptr = 0;
 }
 
 
