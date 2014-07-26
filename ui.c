@@ -50,27 +50,27 @@ void printInstructions(void)
     printf(
 // 0000000001111111111222222222233333333334
 // 1234567890123456789012345678901234567890
-  "              APPLE 2048\n"
+  "              Apple 2048\n"
   "\n"
-  "USE I-J-K-M OR THE ARROW KEYS TO SLIDE\n"
-  "ALL TILES IN A DIRECTION.  MATCHING\n"
-  "TILES ARE ADDED TOGETHER TO MAKE A NEW\n"
-  "TILE.  ON EVERY MOVE, ONE MORE TILE IS\n"
-  "ADDED WITH A RANDOM VALUE OF EITHER 2\n"
-  "OR 4.\n"
+  "Use I-J-K-M or the arrow keys to slide\n"
+  "all tiles in a direction.  Matching\n"
+  "tiles are added together to make a new\n"
+  "tile.  On every move, one more tile is\n"
+  "added with a random value of either 2\n"
+  "or 4.\n"
   "\n"
-  "PLAY ENDS WHEN ALL TILES ARE OCCUPIED\n"
-  "AND NO MORE MOVES ARE POSSIBLE.  TRY\n"
-  "TO GET THE LARGEST TILE YOU CAN!\n"
+  "Play ends when all tiles are occupied\n"
+  "and no more moves are possible.  Try\n"
+  "to get the largest tile you can!\n"
   "\n"
-  "PRESS ESCAPE OR Q TO QUIT AT ANY TIME.\n"
-  "PRESS R TO START A NEW GAME.\n"
-  "PRESS S TO TOGGLE SOUND.\n"
-  "PRESS H TO SEE THIS INFO AGAIN.\n"
+  "Press escape or Q to quit at any time.\n"
+  "Press R to start a new game.\n"
+  "Press S to toggle sound.\n"
+  "Press H to see this info again.\n"
   "\n"
   "\n"
   "\n"
-  "       PRESS ANY KEY TO START");
+  "       Press any key to start");
 
     // The amount of time the user waits to read the in
     while (!kbhit())
@@ -132,12 +132,12 @@ static void printScore(void)
     tScore highestTile = highestTarget();
 
     gotoxy(0,20);
-    printf("SCORE: %10ld  HI-SCORE: %10ld\n", currentScore(), highScore());
+    printf("Score: %-9ld High Score: %-9ld\n", currentScore(), highScore());
     
     if (highestTile == 0) {
-        printf("TRY TO GET THE %ld TILE!\n", nextTarget());
+        printf("Try to get the %ld tile!\n", nextTarget());
     } else {
-        printf("GOT %ld!  NOW GET %ld!\n", highestTile, nextTarget());
+        printf("Got %ld!  Now get %ld!\n", highestTile, nextTarget());
     }
 }
 
@@ -145,6 +145,10 @@ static void printScore(void)
 void printBoard(void)
 {
     performAnimations();
+
+    if (kbhit())
+        cgetc();
+
     printGrid();
     printValues();
     printScore();
@@ -154,7 +158,7 @@ void printBoard(void)
 void gameWon(void)
 {
     gotoxy(0, 22);
-    printf("YOU HAVE WON THE GAME!  PRESS SPACE...\n");
+    printf("You have won the game!  Press space...\n");
     while (cgetc() != ' ')
         ;
     clrscr();
@@ -165,7 +169,7 @@ void gameWon(void)
 void gameLost(void)
 {
     gotoxy(0, 22);
-    printf("SORRY, NO MORE MOVES.  PRESS SPACE...");
+    printf("Sorry, no more moves.  Press space...");
     while (cgetc() != ' ')
         ;
     clrscr();
