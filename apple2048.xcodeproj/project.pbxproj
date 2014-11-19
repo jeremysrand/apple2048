@@ -25,12 +25,14 @@
 		9D02B4CF1A1C584C002799E3 /* textpage.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = textpage.s; sourceTree = "<group>"; };
 		9D02B4D01A1C584C002799E3 /* ui.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui.c; sourceTree = "<group>"; };
 		9D02B4D11A1C584C002799E3 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		9D02B4F21A1C5D2C002799E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		9D02B4B21A1C57D9002799E3 = {
 			isa = PBXGroup;
 			children = (
+				9D02B4F21A1C5D2C002799E3 /* README.md */,
 				9D02B4B81A1C57D9002799E3 /* apple2048 */,
 			);
 			sourceTree = "<group>";
@@ -229,6 +231,7 @@
 				9D02B4C81A1C57D9002799E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
