@@ -7,42 +7,74 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		70E84C2E19B10B3100159159 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		9D667FA919BFF85D00717163 /* anim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = anim.c; sourceTree = "<group>"; };
-		9D667FAA19BFF85D00717163 /* anim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anim.h; sourceTree = "<group>"; };
-		9D667FAB19BFF85D00717163 /* apple2048.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = apple2048.c; sourceTree = "<group>"; };
-		9D667FAC19BFF85D00717163 /* game.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
-		9D667FAD19BFF85D00717163 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		9D667FAE19BFF85D00717163 /* textpage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textpage.h; sourceTree = "<group>"; };
-		9D667FAF19BFF85D00717163 /* textpage.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = textpage.s; sourceTree = "<group>"; };
-		9D667FB019BFF85D00717163 /* ui.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui.c; sourceTree = "<group>"; };
-		9D667FB119BFF85D00717163 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		9D02B4BA1A1C57D9002799E3 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		9D02B4BC1A1C57D9002799E3 /* AppleCommander.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = AppleCommander.jar; path = make/AppleCommander.jar; sourceTree = "<group>"; };
+		9D02B4BD1A1C57D9002799E3 /* createDiskImage */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createDiskImage; path = make/createDiskImage; sourceTree = "<group>"; };
+		9D02B4BE1A1C57D9002799E3 /* DevApple.vii */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = DevApple.vii; path = make/DevApple.vii; sourceTree = "<group>"; };
+		9D02B4BF1A1C57D9002799E3 /* dos33_template.dsk */ = {isa = PBXFileReference; lastKnownFileType = file; name = dos33_template.dsk; path = make/dos33_template.dsk; sourceTree = "<group>"; };
+		9D02B4C01A1C57D9002799E3 /* head.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = head.mk; path = make/head.mk; sourceTree = "<group>"; };
+		9D02B4C11A1C57D9002799E3 /* prodos_template.dsk */ = {isa = PBXFileReference; lastKnownFileType = file; name = prodos_template.dsk; path = make/prodos_template.dsk; sourceTree = "<group>"; };
+		9D02B4C21A1C57D9002799E3 /* tail.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = tail.mk; path = make/tail.mk; sourceTree = "<group>"; };
+		9D02B4C31A1C57D9002799E3 /* V2Make.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = V2Make.scpt; path = make/V2Make.scpt; sourceTree = "<group>"; };
+		9D02B4C91A1C584C002799E3 /* anim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = anim.c; sourceTree = "<group>"; };
+		9D02B4CA1A1C584C002799E3 /* anim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anim.h; sourceTree = "<group>"; };
+		9D02B4CB1A1C584C002799E3 /* apple2048.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = apple2048.c; sourceTree = "<group>"; };
+		9D02B4CC1A1C584C002799E3 /* game.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
+		9D02B4CD1A1C584C002799E3 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		9D02B4CE1A1C584C002799E3 /* textpage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textpage.h; sourceTree = "<group>"; };
+		9D02B4CF1A1C584C002799E3 /* textpage.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = textpage.s; sourceTree = "<group>"; };
+		9D02B4D01A1C584C002799E3 /* ui.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui.c; sourceTree = "<group>"; };
+		9D02B4D11A1C584C002799E3 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		70E84C2319B10B0500159159 = {
+		9D02B4B21A1C57D9002799E3 = {
 			isa = PBXGroup;
 			children = (
-				70E84C2E19B10B3100159159 /* Makefile */,
-				9D667FA919BFF85D00717163 /* anim.c */,
-				9D667FAA19BFF85D00717163 /* anim.h */,
-				9D667FAB19BFF85D00717163 /* apple2048.c */,
-				9D667FAC19BFF85D00717163 /* game.c */,
-				9D667FAD19BFF85D00717163 /* game.h */,
-				9D667FAE19BFF85D00717163 /* textpage.h */,
-				9D667FAF19BFF85D00717163 /* textpage.s */,
-				9D667FB019BFF85D00717163 /* ui.c */,
-				9D667FB119BFF85D00717163 /* ui.h */,
+				9D02B4B81A1C57D9002799E3 /* apple2048 */,
 			);
+			sourceTree = "<group>";
+		};
+		9D02B4B81A1C57D9002799E3 /* apple2048 */ = {
+			isa = PBXGroup;
+			children = (
+				9D02B4C91A1C584C002799E3 /* anim.c */,
+				9D02B4CA1A1C584C002799E3 /* anim.h */,
+				9D02B4CB1A1C584C002799E3 /* apple2048.c */,
+				9D02B4CC1A1C584C002799E3 /* game.c */,
+				9D02B4CD1A1C584C002799E3 /* game.h */,
+				9D02B4CE1A1C584C002799E3 /* textpage.h */,
+				9D02B4CF1A1C584C002799E3 /* textpage.s */,
+				9D02B4D01A1C584C002799E3 /* ui.c */,
+				9D02B4D11A1C584C002799E3 /* ui.h */,
+				9D02B4BA1A1C57D9002799E3 /* Makefile */,
+				9D02B4BB1A1C57D9002799E3 /* make */,
+			);
+			path = apple2048;
+			sourceTree = "<group>";
+		};
+		9D02B4BB1A1C57D9002799E3 /* make */ = {
+			isa = PBXGroup;
+			children = (
+				9D02B4BC1A1C57D9002799E3 /* AppleCommander.jar */,
+				9D02B4BD1A1C57D9002799E3 /* createDiskImage */,
+				9D02B4BE1A1C57D9002799E3 /* DevApple.vii */,
+				9D02B4BF1A1C57D9002799E3 /* dos33_template.dsk */,
+				9D02B4C01A1C57D9002799E3 /* head.mk */,
+				9D02B4C11A1C57D9002799E3 /* prodos_template.dsk */,
+				9D02B4C21A1C57D9002799E3 /* tail.mk */,
+				9D02B4C31A1C57D9002799E3 /* V2Make.scpt */,
+			);
+			name = make;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		70E84C2819B10B0600159159 /* apple2048 */ = {
+		9D02B4B71A1C57D9002799E3 /* apple2048 */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 70E84C2B19B10B0600159159 /* Build configuration list for PBXLegacyTarget "apple2048" */;
+			buildArgumentsString = "-C apple2048 $(ACTION)";
+			buildConfigurationList = 9D02B4C61A1C57D9002799E3 /* Build configuration list for PBXLegacyTarget "apple2048" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
@@ -50,40 +82,40 @@
 			);
 			name = apple2048;
 			passBuildSettingsInEnvironment = 1;
-			productName = Apple2BuildPipelineSample;
+			productName = apple2048;
 		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXProject section */
-		70E84C2419B10B0500159159 /* Project object */ = {
+		9D02B4B31A1C57D9002799E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = "One Girl, One Laptop Productions";
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Jeremy Rand";
 				TargetAttributes = {
-					70E84C2819B10B0600159159 = {
-						CreatedOnToolsVersion = 6.0;
+					9D02B4B71A1C57D9002799E3 = {
+						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
-			buildConfigurationList = 70E84C2719B10B0500159159 /* Build configuration list for PBXProject "apple2048" */;
+			buildConfigurationList = 9D02B4B61A1C57D9002799E3 /* Build configuration list for PBXProject "apple2048" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 70E84C2319B10B0500159159;
+			mainGroup = 9D02B4B21A1C57D9002799E3;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70E84C2819B10B0600159159 /* apple2048 */,
+				9D02B4B71A1C57D9002799E3 /* apple2048 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin XCBuildConfiguration section */
-		70E84C2919B10B0600159159 /* Debug */ = {
+		9D02B4C41A1C57D9002799E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -123,7 +155,7 @@
 			};
 			name = Debug;
 		};
-		70E84C2A19B10B0600159159 /* Release */ = {
+		9D02B4C51A1C57D9002799E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -157,7 +189,7 @@
 			};
 			name = Release;
 		};
-		70E84C2C19B10B0600159159 /* Debug */ = {
+		9D02B4C71A1C57D9002799E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUGGING_SYMBOLS = YES;
@@ -165,41 +197,40 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = apple2048;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		70E84C2D19B10B0600159159 /* Release */ = {
+		9D02B4C81A1C57D9002799E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = apple2048;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70E84C2719B10B0500159159 /* Build configuration list for PBXProject "apple2048" */ = {
+		9D02B4B61A1C57D9002799E3 /* Build configuration list for PBXProject "apple2048" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70E84C2919B10B0600159159 /* Debug */,
-				70E84C2A19B10B0600159159 /* Release */,
+				9D02B4C41A1C57D9002799E3 /* Debug */,
+				9D02B4C51A1C57D9002799E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70E84C2B19B10B0600159159 /* Build configuration list for PBXLegacyTarget "apple2048" */ = {
+		9D02B4C61A1C57D9002799E3 /* Build configuration list for PBXLegacyTarget "apple2048" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70E84C2C19B10B0600159159 /* Debug */,
-				70E84C2D19B10B0600159159 /* Release */,
+				9D02B4C71A1C57D9002799E3 /* Debug */,
+				9D02B4C81A1C57D9002799E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 70E84C2419B10B0500159159 /* Project object */;
+	rootObject = 9D02B4B31A1C57D9002799E3 /* Project object */;
 }

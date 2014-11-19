@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Apple2BuildPipelineSample.xcscheme</key>
+		<key>apple2048.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>70E84C2819B10B0600159159</key>
+		<key>9D02B4B71A1C57D9002799E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
