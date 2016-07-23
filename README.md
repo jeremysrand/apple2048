@@ -8,6 +8,9 @@ ProDOS system file.
 Instructions about how to play are displayed on launch.  You can bring up the
 instructions at any time by pressing the 'h' key.
 
+![Apple2048 Screenshot](/apple2048.png "Apple2048 Screenshot")
+
+[Download a disk image](https://github.com/jeremysrand/apple2048/releases/download/v1.0.1/apple2048-boot.dsk)
 
 Implementation Notes:
 =====================

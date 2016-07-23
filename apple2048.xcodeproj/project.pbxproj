@@ -26,6 +26,7 @@
 		9D02B4D01A1C584C002799E3 /* ui.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui.c; sourceTree = "<group>"; };
 		9D02B4D11A1C584C002799E3 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
 		9D02B4F21A1C5D2C002799E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D6B47531D43C10400F6D704 /* apple2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple2048.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -33,6 +34,7 @@
 			isa = PBXGroup;
 			children = (
 				9D02B4F21A1C5D2C002799E3 /* README.md */,
+				9D6B47521D43C0F400F6D704 /* Screenshots */,
 				9D02B4B81A1C57D9002799E3 /* apple2048 */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +70,14 @@
 				9D02B4C31A1C57D9002799E3 /* V2Make.scpt */,
 			);
 			name = make;
+			sourceTree = "<group>";
+		};
+		9D6B47521D43C0F400F6D704 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B47531D43C10400F6D704 /* apple2048.png */,
+			);
+			name = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
