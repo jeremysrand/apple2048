@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3A3E8B2178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3A3E892178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar */; };
 		9DD54F6820DA0A230088D191 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F6720DA0A230088D191 /* Makefile */; };
 		9DD54F6B20DA0A230088D191 /* AppleCommander.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD54F6A20DA0A230088D191 /* AppleCommander.jar */; };
 		9DD54F6D20DA0A230088D191 /* createDiskImage in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F6C20DA0A230088D191 /* createDiskImage */; };
@@ -45,6 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D3A3E892178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = "bastokenizer-tools-bt-0.2.0.jar"; path = "make/bastokenizer-tools-bt-0.2.0.jar"; sourceTree = "<group>"; };
+		9D3A3E8A2178357A00BE74C7 /* bt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = bt; path = make/bt; sourceTree = "<group>"; };
 		9D45ABB420E1E477008C3F16 /* errorFilter.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = errorFilter.sh; path = make/errorFilter.sh; sourceTree = "<group>"; };
 		9DD54F6220DA0A230088D191 /* doNotBuild */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = doNotBuild; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD54F6720DA0A230088D191 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD54F6B20DA0A230088D191 /* AppleCommander.jar in Frameworks */,
+				9D3A3E8B2178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				9DD54F6A20DA0A230088D191 /* AppleCommander.jar */,
+				9D3A3E892178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar */,
+				9D3A3E8A2178357A00BE74C7 /* bt */,
 				9DD54F6C20DA0A230088D191 /* createDiskImage */,
 				9DD54F6E20DA0A230088D191 /* DevApple.vii */,
 				9DD54F7020DA0A230088D191 /* dos33_template.dsk */,
