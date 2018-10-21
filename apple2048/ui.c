@@ -33,7 +33,7 @@ void playSound(int8_t freq, int16_t duration)
         return;
 
     while (duration > 0) {
-        asm ("STA %w", 0xc030);
+        asm volatile ("STA %w", 0xc030);
         while (freq > 0) {
             freq--;
         }
