@@ -7,144 +7,154 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D3A3E8B2178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3A3E892178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar */; };
-		9DD54F6820DA0A230088D191 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F6720DA0A230088D191 /* Makefile */; };
-		9DD54F6B20DA0A230088D191 /* AppleCommander.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD54F6A20DA0A230088D191 /* AppleCommander.jar */; };
-		9DD54F6D20DA0A230088D191 /* createDiskImage in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F6C20DA0A230088D191 /* createDiskImage */; };
-		9DD54F6F20DA0A230088D191 /* DevApple.vii in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F6E20DA0A230088D191 /* DevApple.vii */; };
-		9DD54F7120DA0A230088D191 /* dos33_template.dsk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F7020DA0A230088D191 /* dos33_template.dsk */; };
-		9DD54F7320DA0A230088D191 /* head.mk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F7220DA0A230088D191 /* head.mk */; };
-		9DD54F7520DA0A230088D191 /* prodos_template.dsk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F7420DA0A230088D191 /* prodos_template.dsk */; };
-		9DD54F7720DA0A230088D191 /* tail.mk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F7620DA0A230088D191 /* tail.mk */; };
-		9DD54F7920DA0A230088D191 /* V2Make.scpt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F7820DA0A230088D191 /* V2Make.scpt */; };
-		9DD54F7C20DA0A230088D191 /* apple2048.xcscheme in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD54F7B20DA0A230088D191 /* apple2048.xcscheme */; };
-		9DD54F9020DA0A4A0088D191 /* textpage.s in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F8720DA0A4A0088D191 /* textpage.s */; };
-		9DD54F9120DA0A4A0088D191 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F8820DA0A4A0088D191 /* game.c */; };
-		9DD54F9220DA0A4A0088D191 /* apple2048.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F8920DA0A4A0088D191 /* apple2048.c */; };
-		9DD54F9320DA0A4A0088D191 /* anim.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F8B20DA0A4A0088D191 /* anim.c */; };
-		9DD54F9420DA0A4A0088D191 /* ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD54F8D20DA0A4A0088D191 /* ui.c */; };
+		9DD31A2E22FE58C400F65886 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9DD31A2D22FE58C400F65886 /* Makefile */; };
+		9DD31A3122FE58C400F65886 /* AppleCommander.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD31A3022FE58C400F65886 /* AppleCommander.jar */; };
+		9DD31A3322FE58C400F65886 /* bastokenizer-tools-bt-0.2.0.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD31A3222FE58C400F65886 /* bastokenizer-tools-bt-0.2.0.jar */; };
+		9DD31A3522FE58C400F65886 /* createDiskImage in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A3422FE58C400F65886 /* createDiskImage */; };
+		9DD31A3722FE58C400F65886 /* bt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A3622FE58C400F65886 /* bt */; };
+		9DD31A3922FE58C400F65886 /* DevApple.vii in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A3822FE58C400F65886 /* DevApple.vii */; };
+		9DD31A3B22FE58C400F65886 /* dos33_template.dsk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A3A22FE58C400F65886 /* dos33_template.dsk */; };
+		9DD31A3D22FE58C400F65886 /* errorFilter.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A3C22FE58C400F65886 /* errorFilter.sh */; };
+		9DD31A3F22FE58C400F65886 /* head.mk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A3E22FE58C400F65886 /* head.mk */; };
+		9DD31A4122FE58C400F65886 /* prodos_template.dsk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A4022FE58C400F65886 /* prodos_template.dsk */; };
+		9DD31A4322FE58C400F65886 /* tail.mk in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A4222FE58C400F65886 /* tail.mk */; };
+		9DD31A4522FE58C400F65886 /* V2Make.scpt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A4422FE58C400F65886 /* V2Make.scpt */; };
+		9DD31A4822FE58C400F65886 /* apple2048.xcscheme in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DD31A4722FE58C400F65886 /* apple2048.xcscheme */; };
+		9DD31A6222FE592E00F65886 /* ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD31A5F22FE592E00F65886 /* ui.c */; };
+		9DD31A6322FE592E00F65886 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD31A6022FE592E00F65886 /* game.c */; };
+		9DD31A6422FE592E00F65886 /* anim.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD31A5E22FE592E00F65886 /* anim.c */; };
+		9DD31A6522FE592E00F65886 /* apple2048.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DD31A6122FE592E00F65886 /* apple2048.c */; };
+		9DD31A6622FE592E00F65886 /* textpage.s in Sources */ = {isa = PBXBuildFile; fileRef = 9DD31A5C22FE592E00F65886 /* textpage.s */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9DD54F6020DA0A230088D191 /* CopyFiles */ = {
+		9DD31A2722FE58C400F65886 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				9DD54F7C20DA0A230088D191 /* apple2048.xcscheme in CopyFiles */,
-				9DD54F6D20DA0A230088D191 /* createDiskImage in CopyFiles */,
-				9DD54F6F20DA0A230088D191 /* DevApple.vii in CopyFiles */,
-				9DD54F7120DA0A230088D191 /* dos33_template.dsk in CopyFiles */,
-				9DD54F7720DA0A230088D191 /* tail.mk in CopyFiles */,
-				9DD54F7920DA0A230088D191 /* V2Make.scpt in CopyFiles */,
-				9DD54F7520DA0A230088D191 /* prodos_template.dsk in CopyFiles */,
-				9DD54F7320DA0A230088D191 /* head.mk in CopyFiles */,
+				9DD31A4122FE58C400F65886 /* prodos_template.dsk in CopyFiles */,
+				9DD31A3722FE58C400F65886 /* bt in CopyFiles */,
+				9DD31A3B22FE58C400F65886 /* dos33_template.dsk in CopyFiles */,
+				9DD31A3522FE58C400F65886 /* createDiskImage in CopyFiles */,
+				9DD31A4822FE58C400F65886 /* apple2048.xcscheme in CopyFiles */,
+				9DD31A4522FE58C400F65886 /* V2Make.scpt in CopyFiles */,
+				9DD31A3F22FE58C400F65886 /* head.mk in CopyFiles */,
+				9DD31A3922FE58C400F65886 /* DevApple.vii in CopyFiles */,
+				9DD31A3D22FE58C400F65886 /* errorFilter.sh in CopyFiles */,
+				9DD31A4322FE58C400F65886 /* tail.mk in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9D3A3E892178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = "bastokenizer-tools-bt-0.2.0.jar"; path = "make/bastokenizer-tools-bt-0.2.0.jar"; sourceTree = "<group>"; };
-		9D3A3E8A2178357A00BE74C7 /* bt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = bt; path = make/bt; sourceTree = "<group>"; };
-		9D45ABB420E1E477008C3F16 /* errorFilter.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = errorFilter.sh; path = make/errorFilter.sh; sourceTree = "<group>"; };
-		9DD54F6220DA0A230088D191 /* doNotBuild */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = doNotBuild; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DD54F6720DA0A230088D191 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		9DD54F6A20DA0A230088D191 /* AppleCommander.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = AppleCommander.jar; path = make/AppleCommander.jar; sourceTree = "<group>"; };
-		9DD54F6C20DA0A230088D191 /* createDiskImage */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createDiskImage; path = make/createDiskImage; sourceTree = "<group>"; };
-		9DD54F6E20DA0A230088D191 /* DevApple.vii */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = DevApple.vii; path = make/DevApple.vii; sourceTree = "<group>"; };
-		9DD54F7020DA0A230088D191 /* dos33_template.dsk */ = {isa = PBXFileReference; lastKnownFileType = file; name = dos33_template.dsk; path = make/dos33_template.dsk; sourceTree = "<group>"; };
-		9DD54F7220DA0A230088D191 /* head.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = head.mk; path = make/head.mk; sourceTree = "<group>"; };
-		9DD54F7420DA0A230088D191 /* prodos_template.dsk */ = {isa = PBXFileReference; lastKnownFileType = file; name = prodos_template.dsk; path = make/prodos_template.dsk; sourceTree = "<group>"; };
-		9DD54F7620DA0A230088D191 /* tail.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = tail.mk; path = make/tail.mk; sourceTree = "<group>"; };
-		9DD54F7820DA0A230088D191 /* V2Make.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = V2Make.scpt; path = make/V2Make.scpt; sourceTree = "<group>"; };
-		9DD54F7B20DA0A230088D191 /* apple2048.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = apple2048.xcscheme; path = apple2048.xcodeproj/xcshareddata/xcschemes/apple2048.xcscheme; sourceTree = SOURCE_ROOT; };
-		9DD54F8520DA0A3B0088D191 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		9DD54F8620DA0A3C0088D191 /* apple2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple2048.png; sourceTree = "<group>"; };
-		9DD54F8720DA0A4A0088D191 /* textpage.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = textpage.s; sourceTree = "<group>"; };
-		9DD54F8820DA0A4A0088D191 /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
-		9DD54F8920DA0A4A0088D191 /* apple2048.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = apple2048.c; sourceTree = "<group>"; };
-		9DD54F8A20DA0A4A0088D191 /* textpage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textpage.h; sourceTree = "<group>"; };
-		9DD54F8B20DA0A4A0088D191 /* anim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = anim.c; sourceTree = "<group>"; };
-		9DD54F8C20DA0A4A0088D191 /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
-		9DD54F8D20DA0A4A0088D191 /* ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ui.c; sourceTree = "<group>"; };
-		9DD54F8E20DA0A4A0088D191 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		9DD54F8F20DA0A4A0088D191 /* anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = anim.h; sourceTree = "<group>"; };
+		9DD31A2122FE58C400F65886 /* apple2048 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = apple2048; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD31A2422FE58C400F65886 /* apple2048.dsk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = apple2048.dsk; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD31A2922FE58C400F65886 /* doNotBuild */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = doNotBuild; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD31A2D22FE58C400F65886 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		9DD31A3022FE58C400F65886 /* AppleCommander.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = AppleCommander.jar; path = make/AppleCommander.jar; sourceTree = "<group>"; };
+		9DD31A3222FE58C400F65886 /* bastokenizer-tools-bt-0.2.0.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = "bastokenizer-tools-bt-0.2.0.jar"; path = "make/bastokenizer-tools-bt-0.2.0.jar"; sourceTree = "<group>"; };
+		9DD31A3422FE58C400F65886 /* createDiskImage */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createDiskImage; path = make/createDiskImage; sourceTree = "<group>"; };
+		9DD31A3622FE58C400F65886 /* bt */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = bt; path = make/bt; sourceTree = "<group>"; };
+		9DD31A3822FE58C400F65886 /* DevApple.vii */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = DevApple.vii; path = make/DevApple.vii; sourceTree = "<group>"; };
+		9DD31A3A22FE58C400F65886 /* dos33_template.dsk */ = {isa = PBXFileReference; lastKnownFileType = file; name = dos33_template.dsk; path = make/dos33_template.dsk; sourceTree = "<group>"; };
+		9DD31A3C22FE58C400F65886 /* errorFilter.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = errorFilter.sh; path = make/errorFilter.sh; sourceTree = "<group>"; };
+		9DD31A3E22FE58C400F65886 /* head.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = head.mk; path = make/head.mk; sourceTree = "<group>"; };
+		9DD31A4022FE58C400F65886 /* prodos_template.dsk */ = {isa = PBXFileReference; lastKnownFileType = file; name = prodos_template.dsk; path = make/prodos_template.dsk; sourceTree = "<group>"; };
+		9DD31A4222FE58C400F65886 /* tail.mk */ = {isa = PBXFileReference; lastKnownFileType = text; name = tail.mk; path = make/tail.mk; sourceTree = "<group>"; };
+		9DD31A4422FE58C400F65886 /* V2Make.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = V2Make.scpt; path = make/V2Make.scpt; sourceTree = "<group>"; };
+		9DD31A4722FE58C400F65886 /* apple2048.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = apple2048.xcscheme; path = apple2048.xcodeproj/xcshareddata/xcschemes/apple2048.xcscheme; sourceTree = SOURCE_ROOT; };
+		9DD31A5722FE591B00F65886 /* apple2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple2048.png; sourceTree = "<group>"; };
+		9DD31A5822FE591B00F65886 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9DD31A5922FE592E00F65886 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		9DD31A5A22FE592E00F65886 /* textpage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textpage.h; sourceTree = "<group>"; };
+		9DD31A5B22FE592E00F65886 /* anim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = anim.h; sourceTree = "<group>"; };
+		9DD31A5C22FE592E00F65886 /* textpage.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = textpage.s; sourceTree = "<group>"; };
+		9DD31A5D22FE592E00F65886 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		9DD31A5E22FE592E00F65886 /* anim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = anim.c; sourceTree = "<group>"; };
+		9DD31A5F22FE592E00F65886 /* ui.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui.c; sourceTree = "<group>"; };
+		9DD31A6022FE592E00F65886 /* game.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
+		9DD31A6122FE592E00F65886 /* apple2048.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = apple2048.c; sourceTree = "<group>"; };
+		9DD31A6722FE59FE00F65886 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9DD54F5F20DA0A230088D191 /* Frameworks */ = {
+		9DD31A2622FE58C400F65886 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD54F6B20DA0A230088D191 /* AppleCommander.jar in Frameworks */,
-				9D3A3E8B2178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar in Frameworks */,
+				9DD31A3122FE58C400F65886 /* AppleCommander.jar in Frameworks */,
+				9DD31A3322FE58C400F65886 /* bastokenizer-tools-bt-0.2.0.jar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9DD54F5820DA0A230088D191 = {
+		9DD31A1A22FE58C400F65886 = {
 			isa = PBXGroup;
 			children = (
-				9DD54F8620DA0A3C0088D191 /* apple2048.png */,
-				9DD54F8520DA0A3B0088D191 /* README.md */,
-				9DD54F6420DA0A230088D191 /* apple2048 */,
-				9DD54F6320DA0A230088D191 /* Products */,
+				9DD31A5722FE591B00F65886 /* apple2048.png */,
+				9DD31A5822FE591B00F65886 /* README.md */,
+				9DD31A6722FE59FE00F65886 /* LICENSE */,
+				9DD31A2A22FE58C400F65886 /* apple2048 */,
+				9DD31A2222FE58C400F65886 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9DD54F6320DA0A230088D191 /* Products */ = {
+		9DD31A2222FE58C400F65886 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DD54F6220DA0A230088D191 /* doNotBuild */,
+				9DD31A2122FE58C400F65886 /* apple2048 */,
+				9DD31A2422FE58C400F65886 /* apple2048.dsk */,
+				9DD31A2922FE58C400F65886 /* doNotBuild */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DD54F6420DA0A230088D191 /* apple2048 */ = {
+		9DD31A2A22FE58C400F65886 /* apple2048 */ = {
 			isa = PBXGroup;
 			children = (
-				9DD54F6720DA0A230088D191 /* Makefile */,
-				9DD54F8B20DA0A4A0088D191 /* anim.c */,
-				9DD54F8F20DA0A4A0088D191 /* anim.h */,
-				9DD54F8920DA0A4A0088D191 /* apple2048.c */,
-				9DD54F8820DA0A4A0088D191 /* game.c */,
-				9DD54F8E20DA0A4A0088D191 /* game.h */,
-				9DD54F8A20DA0A4A0088D191 /* textpage.h */,
-				9DD54F8720DA0A4A0088D191 /* textpage.s */,
-				9DD54F8D20DA0A4A0088D191 /* ui.c */,
-				9DD54F8C20DA0A4A0088D191 /* ui.h */,
-				9DD54F6920DA0A230088D191 /* make */,
-				9DD54F7A20DA0A230088D191 /* Supporting Files */,
+				9DD31A2D22FE58C400F65886 /* Makefile */,
+				9DD31A5E22FE592E00F65886 /* anim.c */,
+				9DD31A5B22FE592E00F65886 /* anim.h */,
+				9DD31A6122FE592E00F65886 /* apple2048.c */,
+				9DD31A6022FE592E00F65886 /* game.c */,
+				9DD31A5D22FE592E00F65886 /* game.h */,
+				9DD31A5A22FE592E00F65886 /* textpage.h */,
+				9DD31A5C22FE592E00F65886 /* textpage.s */,
+				9DD31A5F22FE592E00F65886 /* ui.c */,
+				9DD31A5922FE592E00F65886 /* ui.h */,
+				9DD31A2F22FE58C400F65886 /* make */,
+				9DD31A4622FE58C400F65886 /* Supporting Files */,
 			);
 			path = apple2048;
 			sourceTree = "<group>";
 		};
-		9DD54F6920DA0A230088D191 /* make */ = {
+		9DD31A2F22FE58C400F65886 /* make */ = {
 			isa = PBXGroup;
 			children = (
-				9DD54F6A20DA0A230088D191 /* AppleCommander.jar */,
-				9D3A3E892178357A00BE74C7 /* bastokenizer-tools-bt-0.2.0.jar */,
-				9D3A3E8A2178357A00BE74C7 /* bt */,
-				9DD54F6C20DA0A230088D191 /* createDiskImage */,
-				9DD54F6E20DA0A230088D191 /* DevApple.vii */,
-				9DD54F7020DA0A230088D191 /* dos33_template.dsk */,
-				9D45ABB420E1E477008C3F16 /* errorFilter.sh */,
-				9DD54F7220DA0A230088D191 /* head.mk */,
-				9DD54F7420DA0A230088D191 /* prodos_template.dsk */,
-				9DD54F7620DA0A230088D191 /* tail.mk */,
-				9DD54F7820DA0A230088D191 /* V2Make.scpt */,
+				9DD31A3022FE58C400F65886 /* AppleCommander.jar */,
+				9DD31A3222FE58C400F65886 /* bastokenizer-tools-bt-0.2.0.jar */,
+				9DD31A3422FE58C400F65886 /* createDiskImage */,
+				9DD31A3622FE58C400F65886 /* bt */,
+				9DD31A3822FE58C400F65886 /* DevApple.vii */,
+				9DD31A3A22FE58C400F65886 /* dos33_template.dsk */,
+				9DD31A3C22FE58C400F65886 /* errorFilter.sh */,
+				9DD31A3E22FE58C400F65886 /* head.mk */,
+				9DD31A4022FE58C400F65886 /* prodos_template.dsk */,
+				9DD31A4222FE58C400F65886 /* tail.mk */,
+				9DD31A4422FE58C400F65886 /* V2Make.scpt */,
 			);
 			name = make;
 			sourceTree = "<group>";
 		};
-		9DD54F7A20DA0A230088D191 /* Supporting Files */ = {
+		9DD31A4622FE58C400F65886 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9DD54F7B20DA0A230088D191 /* apple2048.xcscheme */,
+				9DD31A4722FE58C400F65886 /* apple2048.xcscheme */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,10 +162,10 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		9DD54F5D20DA0A230088D191 /* apple2048 */ = {
+		9DD31A1F22FE58C400F65886 /* apple2048 */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "-C apple2048 $(ACTION)";
-			buildConfigurationList = 9DD54F7F20DA0A230088D191 /* Build configuration list for PBXLegacyTarget "apple2048" */;
+			buildConfigurationList = 9DD31A4B22FE58C400F65886 /* Build configuration list for PBXLegacyTarget "apple2048" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
@@ -168,13 +178,41 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		9DD54F6120DA0A230088D191 /* doNotBuild */ = {
+		9DD31A2022FE58C400F65886 /* Binary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DD54F8220DA0A230088D191 /* Build configuration list for PBXNativeTarget "doNotBuild" */;
+			buildConfigurationList = 9DD31A4E22FE58C400F65886 /* Build configuration list for PBXNativeTarget "Binary" */;
 			buildPhases = (
-				9DD54F5E20DA0A230088D191 /* Sources */,
-				9DD54F5F20DA0A230088D191 /* Frameworks */,
-				9DD54F6020DA0A230088D191 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Binary;
+			productName = Binary;
+			productReference = 9DD31A2122FE58C400F65886 /* apple2048 */;
+			productType = "com.apple.product-type.tool";
+		};
+		9DD31A2322FE58C400F65886 /* DiskImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DD31A5122FE58C400F65886 /* Build configuration list for PBXNativeTarget "DiskImage" */;
+			buildPhases = (
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiskImage;
+			productName = DiskImage;
+			productReference = 9DD31A2422FE58C400F65886 /* apple2048.dsk */;
+			productType = "com.apple.product-type.tool";
+		};
+		9DD31A2822FE58C400F65886 /* doNotBuild */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DD31A5422FE58C400F65886 /* Build configuration list for PBXNativeTarget "doNotBuild" */;
+			buildPhases = (
+				9DD31A2522FE58C400F65886 /* Sources */,
+				9DD31A2622FE58C400F65886 /* Frameworks */,
+				9DD31A2722FE58C400F65886 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -182,62 +220,70 @@
 			);
 			name = doNotBuild;
 			productName = doNotBuild;
-			productReference = 9DD54F6220DA0A230088D191 /* doNotBuild */;
+			productReference = 9DD31A2922FE58C400F65886 /* doNotBuild */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9DD54F5920DA0A230088D191 /* Project object */ = {
+		9DD31A1B22FE58C400F65886 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Jeremy Rand";
 				TargetAttributes = {
-					9DD54F5D20DA0A230088D191 = {
-						CreatedOnToolsVersion = 9.4.1;
+					9DD31A1F22FE58C400F65886 = {
+						CreatedOnToolsVersion = 10.3;
 					};
-					9DD54F6120DA0A230088D191 = {
-						CreatedOnToolsVersion = 9.4.1;
+					9DD31A2022FE58C400F65886 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					9DD31A2322FE58C400F65886 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					9DD31A2822FE58C400F65886 = {
+						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
-			buildConfigurationList = 9DD54F5C20DA0A230088D191 /* Build configuration list for PBXProject "apple2048" */;
+			buildConfigurationList = 9DD31A1E22FE58C400F65886 /* Build configuration list for PBXProject "apple2048" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9DD54F5820DA0A230088D191;
-			productRefGroup = 9DD54F6320DA0A230088D191 /* Products */;
+			mainGroup = 9DD31A1A22FE58C400F65886;
+			productRefGroup = 9DD31A2222FE58C400F65886 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DD54F5D20DA0A230088D191 /* apple2048 */,
-				9DD54F6120DA0A230088D191 /* doNotBuild */,
+				9DD31A1F22FE58C400F65886 /* apple2048 */,
+				9DD31A2022FE58C400F65886 /* Binary */,
+				9DD31A2322FE58C400F65886 /* DiskImage */,
+				9DD31A2822FE58C400F65886 /* doNotBuild */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9DD54F5E20DA0A230088D191 /* Sources */ = {
+		9DD31A2522FE58C400F65886 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD54F9320DA0A4A0088D191 /* anim.c in Sources */,
-				9DD54F9420DA0A4A0088D191 /* ui.c in Sources */,
-				9DD54F9220DA0A4A0088D191 /* apple2048.c in Sources */,
-				9DD54F9120DA0A4A0088D191 /* game.c in Sources */,
-				9DD54F6820DA0A230088D191 /* Makefile in Sources */,
-				9DD54F9020DA0A4A0088D191 /* textpage.s in Sources */,
+				9DD31A6422FE592E00F65886 /* anim.c in Sources */,
+				9DD31A6322FE592E00F65886 /* game.c in Sources */,
+				9DD31A2E22FE58C400F65886 /* Makefile in Sources */,
+				9DD31A6622FE592E00F65886 /* textpage.s in Sources */,
+				9DD31A6522FE592E00F65886 /* apple2048.c in Sources */,
+				9DD31A6222FE592E00F65886 /* ui.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9DD54F7D20DA0A230088D191 /* Debug */ = {
+		9DD31A4922FE58C400F65886 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -287,12 +333,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
-		9DD54F7E20DA0A230088D191 /* Release */ = {
+		9DD31A4A22FE58C400F65886 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -337,10 +384,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 			};
 			name = Release;
 		};
-		9DD54F8020DA0A230088D191 /* Debug */ = {
+		9DD31A4C22FE58C400F65886 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -355,7 +403,7 @@
 			};
 			name = Debug;
 		};
-		9DD54F8120DA0A230088D191 /* Release */ = {
+		9DD31A4D22FE58C400F65886 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -367,24 +415,66 @@
 			};
 			name = Release;
 		};
-		9DD54F8320DA0A230088D191 /* Debug */ = {
+		9DD31A4F22FE58C400F65886 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VD9FGCW36C;
+				PRODUCT_NAME = apple2048;
+			};
+			name = Debug;
+		};
+		9DD31A5022FE58C400F65886 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VD9FGCW36C;
+				PRODUCT_NAME = apple2048;
+			};
+			name = Release;
+		};
+		9DD31A5222FE58C400F65886 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VD9FGCW36C;
+				PRODUCT_NAME = apple2048.dsk;
+			};
+			name = Debug;
+		};
+		9DD31A5322FE58C400F65886 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VD9FGCW36C;
+				PRODUCT_NAME = apple2048.dsk;
+			};
+			name = Release;
+		};
+		9DD31A5522FE58C400F65886 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VD9FGCW36C;
 				GCC_PREPROCESSOR_DEFINITIONS = "__fastcall__=\"\"";
-				HEADER_SEARCH_PATHS = /usr/local/lib/cc65/include;
+				HEADER_SEARCH_PATHS = (
+					$TEMP_ROOT/apple2048.build/$CONFIGURATION/apple2048.build/DerivedSources,
+					/usr/local/share/cc65/include,
+				);
 				PRODUCT_NAME = doNotBuild;
 			};
 			name = Debug;
 		};
-		9DD54F8420DA0A230088D191 /* Release */ = {
+		9DD31A5622FE58C400F65886 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VD9FGCW36C;
 				GCC_PREPROCESSOR_DEFINITIONS = "__fastcall__=\"\"";
-				HEADER_SEARCH_PATHS = /usr/local/lib/cc65/include;
+				HEADER_SEARCH_PATHS = (
+					$TEMP_ROOT/apple2048.build/$CONFIGURATION/apple2048.build/DerivedSources,
+					/usr/local/share/cc65/include,
+				);
 				PRODUCT_NAME = doNotBuild;
 			};
 			name = Release;
@@ -392,34 +482,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9DD54F5C20DA0A230088D191 /* Build configuration list for PBXProject "apple2048" */ = {
+		9DD31A1E22FE58C400F65886 /* Build configuration list for PBXProject "apple2048" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DD54F7D20DA0A230088D191 /* Debug */,
-				9DD54F7E20DA0A230088D191 /* Release */,
+				9DD31A4922FE58C400F65886 /* Debug */,
+				9DD31A4A22FE58C400F65886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DD54F7F20DA0A230088D191 /* Build configuration list for PBXLegacyTarget "apple2048" */ = {
+		9DD31A4B22FE58C400F65886 /* Build configuration list for PBXLegacyTarget "apple2048" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DD54F8020DA0A230088D191 /* Debug */,
-				9DD54F8120DA0A230088D191 /* Release */,
+				9DD31A4C22FE58C400F65886 /* Debug */,
+				9DD31A4D22FE58C400F65886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DD54F8220DA0A230088D191 /* Build configuration list for PBXNativeTarget "doNotBuild" */ = {
+		9DD31A4E22FE58C400F65886 /* Build configuration list for PBXNativeTarget "Binary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DD54F8320DA0A230088D191 /* Debug */,
-				9DD54F8420DA0A230088D191 /* Release */,
+				9DD31A4F22FE58C400F65886 /* Debug */,
+				9DD31A5022FE58C400F65886 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DD31A5122FE58C400F65886 /* Build configuration list for PBXNativeTarget "DiskImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DD31A5222FE58C400F65886 /* Debug */,
+				9DD31A5322FE58C400F65886 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DD31A5422FE58C400F65886 /* Build configuration list for PBXNativeTarget "doNotBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DD31A5522FE58C400F65886 /* Debug */,
+				9DD31A5622FE58C400F65886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9DD54F5920DA0A230088D191 /* Project object */;
+	rootObject = 9DD31A1B22FE58C400F65886 /* Project object */;
 }
